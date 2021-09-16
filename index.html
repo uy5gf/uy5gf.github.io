@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Hank Quinlan, Horrible Cop</title>
+		<title>Castigos</title>
 	</head>
 	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Hank Quinlan!</h1>
-				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-        		<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-			</ul>
-		</footer>
+		<?php
+
+		require_once ('funciones.php');
+
+
+		$cartas=gen_cartas();
+
+		//var_dump($cartas);
+
+		echo '<form method="post">
+		<button style="font-size:32px; color:#ff19fb; padding:12px 12px; border-radius: 12px; border: 3px solid #19ff3b; background-color:#cfffe7; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); margin-left:900px;" name="button1" type="submit">Mostrar todas</button><button style="font-size:32px; color:#ff19fb; padding:12px 19px; border-radius: 12px; border: 3px solid #19f4ff; background-color:#d6fdff; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); margin-left:40px;" name="button2" type="submit">Rollear carta</button>
+		</form>';
+
+		if(array_key_exists('button1', $_POST)) {
+		   button1($cartas);
+		}
+		function button1($cartas) {
+		   impr_cartas($cartas);
+		}
+
+		$cartas = mezcl_cartas($cartas);
+
+
+		if(array_key_exists('button2', $_POST)) {
+		   button2($cartas);
+		}
+		function button2($cartas) {
+		   sacarUna($cartas);
+		}
+
+		?>
 	</body>
 </html>
