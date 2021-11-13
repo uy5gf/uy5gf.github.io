@@ -1,6 +1,6 @@
 var num = 0;
 
-numTotal = 24; //numero total de castigos
+numTotal = 36; //numero total de castigos
 
 function showAll() {
     num++;
