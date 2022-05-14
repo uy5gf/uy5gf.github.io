@@ -1,6 +1,16 @@
 var num = 0;
 
-numTotal = 36; //numero total de castigos
+numTotal = 24; //numero total de castigos
+
+function injectAll() {
+    num++
+
+    for(i=1; i<=numTotal; i++) {
+        src1 = "castigos/"
+        src2 = i+".png"
+        document.getElementById('imagen'+i).src= src1+src2
+    }
+}
 
 function showAll() {
     num++;
