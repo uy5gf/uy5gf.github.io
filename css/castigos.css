@@ -13,12 +13,13 @@ html {
 #botones {
     width: 800px;
     height: 100px;
-    margin-left: 36%;
+    margin-left: 35%;
     margin-right: auto;
     position: relative;
 }
 
 .button {
+    cursor: pointer;
     font-size: 32px;
     color:#ff19fb;
     border-radius: 12px;
